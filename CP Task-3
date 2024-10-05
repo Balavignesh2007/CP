@@ -1,0 +1,29 @@
+import datetime
+
+def day_of_year_to_date(day_num, year):
+
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        days_in_months = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    else:
+        days_in_months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    
+    month = 0
+    day = day_num
+    
+  
+    for i, days_in_month in enumerate(days_in_months):
+        if day > days_in_month:
+            day -= days_in_month
+        else:
+            month = i + 1
+            break
+
+ 
+    date_obj = datetime.date(year, month, day)
+  
+    return date_obj.strftime("%d %B, %Y")
+
+
+day_num = 256
+year = 2021
+print(day_of_year_to_date(day_num, year))  # 
