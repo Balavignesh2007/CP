@@ -1,0 +1,16 @@
+def remove_duplicates(arr):
+
+    unique_arr = []
+    
+    
+    for num in arr:
+        
+        if len(unique_arr) == 0 or num != unique_arr[-1]:
+            unique_arr.append(num)
+    
+    return unique_arr
+
+
+input_array = [2, 3, 4, 4, 6, 7, 7]
+output_array = remove_duplicates(input_array)
+print(output_array)  
